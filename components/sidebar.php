@@ -3,7 +3,7 @@ $dashboard_active = "fw-bold";
 $bagian_active = "fw-bold";
 $karyawan_active = "fw-bold";
 $penggajian_active = "fw-bold";
-$laporan_active = "fw-bold";
+$pemecatan_active = "fw-bold";
 
 $page = isset($_GET["page"]) ? $_GET["page"] : "";
 
@@ -29,11 +29,11 @@ switch ($page) {
         case "penggajianhapus":
                 $penggajian_active = "active";
                 break;
-        case "laporan":
-        case "laporantambah":
-        case "laporanhapus":
-        case "laporanubah":
-                $laporan_active = "active";
+        case "pemecatan":
+        case "pemecatantambah":
+        case "pemecatanhapus":
+        case "pemecatanubah":
+                $pemecatan_active = "active";
                 break;
         default:
                 $dashboard_active = "active";
@@ -48,7 +48,7 @@ switch ($page) {
                 <a href="?page=bagian" class="list-group-item list-group-item-action bg-transparent second-text <?php echo $bagian_active; ?>"><i class="fas fa-building me-2"></i>Bagian</a>
                 <a href="?page=karyawan" class="list-group-item list-group-item-action bg-transparent second-text <?php echo $karyawan_active; ?>"><i class="fas fa-users me-2"></i>Karyawan</a>
                 <a href="?page=pilihbulantahunpenggajian" class="list-group-item list-group-item-action bg-transparent second-text <?php echo $penggajian_active; ?>"><i class="fas fa-money-bill me-2"></i>Penggajian</a>
-                <a href="?page=laporan" class="list-group-item list-group-item-action bg-transparent second-text <?php echo $laporan_active; ?>"><i class="fas fa-file-alt me-2"></i>Laporan</a>
+                <a href="?page=pemecatan" class="list-group-item list-group-item-action bg-transparent second-text <?php echo $pemecatan_active; ?>"><i class="fas fa-user-slash me-2"></i>Pemecatan</a>
                 <a href="#" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i class="fas fa-power-off me-2"></i>Logout</a>
         </div>
 </div>

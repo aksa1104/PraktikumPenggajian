@@ -3,10 +3,10 @@ include "database/connection.php";
 ?>
 <div class="row mb-3">
   <div class="col">
-    <h3>Laporan</h3>
+    <h3>Pemecatan</h3>
   </div>
   <div class="col">
-    <a href="?page=laporantambah" class="btn btn-success float-end">
+    <a href="?page=pemecatantambah" class="btn btn-success float-end">
       <i class="fa fa-plus-circle"></i> Tambah
     </a>
   </div>
@@ -14,7 +14,7 @@ include "database/connection.php";
 <div class="row mt-3">
   <div class="col">
     <?php
-    $result = mysqli_query($connection, "SELECT * FROM laporan");
+    $result = mysqli_query($connection, "SELECT * FROM pemecatan");
     if (!$result) {
       echo '<div class="alert alert-danger">' . mysqli_error($connection) . '</div>';
       return;
@@ -28,8 +28,9 @@ include "database/connection.php";
       <thead>
         <tr>
           <th>No</th>
-          <th>Judul</th>
+          <th>Nama Karyawan</th>
           <th>Tanggal</th>
+          <th>Alasan</th>
           <th width="200">Opsi</th>
         </tr>
       </thead>
@@ -38,11 +39,12 @@ include "database/connection.php";
         while ($row = mysqli_fetch_assoc($result)) { ?>
           <tr class="align-middle">
             <td><?= $no++ ?></td>
-            <td><?= htmlspecialchars($row['judul']) ?></td>
+            <td><?= htmlspecialchars($row['nama_karyawan']) ?></td>
             <td><?= htmlspecialchars($row['tanggal']) ?></td>
+            <td><?= htmlspecialchars($row['alasan']) ?></td>
             <td>
-              <a href="?page=laporanubah&id=<?= $row['id'] ?>" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Ubah</a>
-              <a href="?page=laporanhapus&id=<?= $row['id'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus data ini?');"><i class="fa fa-trash"></i> Hapus</a>
+              <a href="?page=pemecatanubah&id=<?= $row['id'] ?>" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Ubah</a>
+              <a href="?page=pemecatanhapus&id=<?= $row['id'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus data ini?');"><i class="fa fa-trash"></i> Hapus</a>
             </td>
           </tr>
         <?php } ?>

@@ -68,20 +68,20 @@ switch ($page) {
         include "pages/penggajian/penggajianubah.php";
         break;
 
-    case "laporan":
-        include "pages/laporan/laporan.php";
+    case "pemecatan":
+        include "pages/pemecatan/pemecatan.php";
         break;
 
-    case "laporantambah":
-        include "pages/laporan/laporantambah.php";
+    case "pemecatantambah":
+        include "pages/pemecatan/pemecatantambah.php";
         break;
 
-    case "laporanhapus":
-        include "pages/laporan/laporanhapus.php";
+    case "pemecatanhapus":
+        include "pages/pemecatan/pemecatanhapus.php";
         break;
 
-    case "laporanubah":
-        include "pages/laporan/laporanubah.php";
+    case "pemecatanubah":
+        include "pages/pemecatan/pemecatanubah.php";
         break;
 
     default:
